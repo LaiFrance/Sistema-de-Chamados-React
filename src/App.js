@@ -1,16 +1,12 @@
 
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes';
 
-
-
-function App(){
-  return(
-    <div>
-      <h1>teste</h1>
-
-
-
-    </div>
-
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes/>
+    </BrowserRouter>
   );
 }
 
