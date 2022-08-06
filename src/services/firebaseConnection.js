@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-const firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyCPxK1x4AqNpMIiBW3FTvdd5tIXd_xzEj8",
     authDomain: "sistema-309d8.firebaseapp.com",
     projectId: "sistema-309d8",
@@ -12,4 +12,8 @@ const firebaseConfig = {
   };
   
   // Initialize Firebase
+  if(!firebase.apps.length){
  firebase.initializeApp(firebaseConfig);
+  }
+
+  export default firebase;

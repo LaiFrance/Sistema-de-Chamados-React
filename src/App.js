@@ -1,26 +1,17 @@
-import React from "react";
 
-const Bemvindo = (props) => 
-{
-  return(
-    <div>
-      <h1>bem vindo ao sistema {props.nome}</h1>
-    </div>
-  );
-}
+
+
 
 function App(){
   return(
     <div>
-      Olá mundo!
-      <Bemvindo nome = "Laise"/>
-
+      <h1>teste</h1>
 
 
 
     </div>
 
-  )
+  );
 }
 
 export default App;
