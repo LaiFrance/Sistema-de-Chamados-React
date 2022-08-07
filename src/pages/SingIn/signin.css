@@ -53,17 +53,16 @@ form h1{
 }
 
 .login input{
-  margin-bottom: 15px;
-  height: 35px;
+  
+  height: 35vw;
   border:0;
   border-radius: 7px;
-  padding: 10px;
   font-size: 15px;
   background-color: rgb(226, 226, 226);
 }
 
 form button{
-  height: 35px;
+  height: 35vw;
   border:0;
   border-radius: 7px;
   background-color: #7681b1;
