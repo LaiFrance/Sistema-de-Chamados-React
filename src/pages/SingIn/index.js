@@ -13,6 +13,7 @@ function SignIn() {
   const [password, setPassword] = useState('');
 
   function handleSubmit(e){
+    /* função para submeter os dados atualiza page*/
     e.preventDefault();
     alert('CLICOU')
   }
@@ -25,7 +26,7 @@ function SignIn() {
         </div>
         <form onSubmit={handleSubmit}>
           <h1>Entrar</h1>
-          <input type="text" name="nome" value={nome} onChange={e => setNome(e.target.value)} placeholder="nome" />
+          <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="nome" />
           <input type="text" placeholder="email@email.com" value={email} onChange={ (e) => setEmail(e.target.value) }/>
           <input type="password" placeholder="*******" value={password} onChange={(e) => setPassword(e.target.value) } />
           <button type="submit">Acessar</button>
