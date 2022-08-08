@@ -1,7 +1,7 @@
-
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './signup.css';
+import { AuthContext } from '../../contexts/auth';
 
 function SignUp() {
    /* meus estados */
@@ -11,10 +11,15 @@ function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { signUp } = useContext(AuthContext);
+
   function handleSubmit(e){
     /* função para submeter os dados atualiza page*/
     e.preventDefault();
-    alert('CLICOU')
+    if(nome !== '' && email !== '' && password !== ''){
+      signUp(email, password, nome)
+    }
+
   }
 
   return (
@@ -30,7 +35,7 @@ function SignUp() {
           <button type="submit">Cadastrar</button>
         </form>  
 
-        <Link to="/">Sair</Link>
+        <Link to="/">Já tem uma conta? Entre</Link>
       </div>
     </div>
   );
