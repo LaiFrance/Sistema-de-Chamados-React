@@ -1,35 +1,39 @@
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { AuthContext } from '../../contexts/auth';
 import './signin.css';
-import loginimg from '../../asserts/loginimg.png'
+import loginimg from '../../assets/loginimg.png'
 
 function SignIn() {
-   /* meus estados */
-  
-    
-  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const { signIn, loadingAuth} = useContext(AuthContext);
+
   function handleSubmit(e){
-    /* função para submeter os dados atualiza page*/
     e.preventDefault();
-    alert('CLICOU')
+    
+    if(email !== '' && password !== ''){
+      signIn(email, password)
+    }
+
+
   }
 
   return (
     <div className="container-center">
-     <img className='sign-in' src={loginimg} alt="Logo" />
+        <img className='sign-in' src={loginimg} alt="Logo" />
       <div className="login">
         <div className="login-area">
         </div>
+
         <form onSubmit={handleSubmit}>
           <h1>Entrar</h1>
-          <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="nome" />
           <input type="text" placeholder="email@email.com" value={email} onChange={ (e) => setEmail(e.target.value) }/>
           <input type="password" placeholder="*******" value={password} onChange={(e) => setPassword(e.target.value) } />
-          <button type="submit">Acessar</button>
+          <button type="submit">{loadingAuth ? 'Carregando...' : 'Acessar'}</button>
         </form>  
 
         <Link to="/register">Criar uma conta</Link>
